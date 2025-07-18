@@ -1,10 +1,14 @@
-🏨 Hotel System in Dart
-This project demonstrates Object-Oriented Programming (OOP) concepts in Dart by modeling a hotel system. It includes people (Client, Employee, Manager) and room booking functionality using classes, inheritance, abstract classes, getters, setters, static members, and method overriding.
+# 🏨 Hotel System in Dart
 
-📁 Project Structure
-🔹 Abstract Class: Person
-dart
-Copy code
+This project demonstrates **Object-Oriented Programming (OOP)** concepts in Dart by modeling a simple hotel system. It includes classes for people (`Client`, `Employee`, `Manager`) and room booking logic, showcasing inheritance, abstraction, encapsulation, static members, and method overriding.
+
+---
+
+## 📁 Project Structure
+
+### 🔹 Abstract Class: `Person`
+
+```dart
 abstract class Person {
   String _name;
   String _Id;
@@ -19,13 +23,11 @@ abstract class Person {
 
   String getInfo();
 }
-Purpose: Represents a generic person.
+Represents a generic person (abstract class).
 
-Abstract: Cannot be directly instantiated.
+Uses private fields with getters and setters for encapsulation.
 
-Encapsulation: Uses private variables (_name, _Id) with public getters and setters.
-
-Polymorphism: Defines an abstract method getInfo() to be implemented by subclasses.
+Defines an abstract method getInfo() that must be overridden.
 
 🔹 Subclasses of Person
 1. 👤 Client
@@ -42,11 +44,11 @@ class Client extends Person {
     return 'Client: $name, Room: $roomNumber';
   }
 }
-Inherits from Person.
+Inherits from Person
 
-Adds specific attributes like roomNumber and tel.
+Adds roomNumber and tel
 
-Implements getInfo() with customized output.
+Overrides getInfo() method
 
 2. 👷 Employee
 dart
@@ -62,9 +64,9 @@ class Employee extends Person {
     return 'Employee: $name, Job: $jobTitle, Salary: $salary';
   }
 }
-Adds jobTitle and salary.
+Adds jobTitle and salary
 
-Also overrides getInfo() with job details.
+Overrides getInfo() to show job information
 
 3. 👨‍💼 Manager
 dart
@@ -79,9 +81,9 @@ class Manager extends Person {
     return 'Manager: $name, Department: $department';
   }
 }
-Adds department attribute.
+Adds department field
 
-Overrides getInfo() with manager-specific data.
+Custom implementation of getInfo()
 
 🔹 Class: Room
 dart
@@ -113,19 +115,13 @@ class Room {
     return totalRooms;
   }
 }
-Encapsulation: Manages room properties like number, price, and isAvailable.
+Represents a room in the hotel
 
-Static Members:
+Tracks number, price, and availability
 
-totalRooms: Tracks how many rooms have been created.
+Uses static variable to count total rooms
 
-getTotalRooms(): Returns the total count.
-
-Methods:
-
-bookRoom(): Books the room if available.
-
-freeRoom(): Marks the room as available again.
+Includes bookRoom() and freeRoom() methods
 
 🚀 Main Function
 dart
@@ -156,22 +152,22 @@ void main() {
     print("Room ${room2.number} is already booked.");
   }
 }
-What It Does:
-Creates instances of Client, Employee, and Manager.
+💡 What It Shows
+Creates instances of Client, Employee, and Manager
 
-Creates two Room objects.
+Creates and manages Room objects
 
-Displays their information using getInfo().
+Demonstrates room booking logic
 
-Demonstrates booking logic using bookRoom().
-
-Prints the total number of rooms.
+Prints total number of rooms and booking results
 
 ✅ Concepts Demonstrated
-Concept	Usage Example
-Abstract Class	Person
-Inheritance	Client, Employee, Manager
+Concept	Description
+Abstract Class	Person defines a shared interface
+Inheritance	Client, Employee, Manager extend Person
 Encapsulation	Private fields with getters/setters
-Polymorphism	getInfo() method overridden
-Static Members	Room.totalRooms
-Object Instantiation	Client client1 = ...
+Polymorphism	getInfo() overridden in each class
+Static Members	Room.totalRooms counts created rooms
+Object Creation	Instantiating and using objects
+
+
